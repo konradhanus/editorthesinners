@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import assets from "../../assets";
+import DrawerElement from "./DrawerElement";
 
-export default styled.div`
+const DrawerStyle = styled.div`
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 16px;
@@ -9,3 +11,13 @@ export default styled.div`
     background-color: green;
     height: 1000px;
 `;
+
+const Drawer = () => (
+    <div>
+        {assets.map((singleAsset: string) => (
+            <DrawerElement name={singleAsset}/>
+        ))}
+    </div>
+)
+
+export default Drawer

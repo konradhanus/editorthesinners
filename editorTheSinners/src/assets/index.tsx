@@ -26,7 +26,7 @@ import wizzard from "./tom.png";
 import water from "./water.png";
 import box from "./box.png";
 
-export {
+export default [
     dirt1,
     dirt2,
     dirt3,
@@ -54,4 +54,4 @@ export {
     water,
     box,
     background,
-};
+];
