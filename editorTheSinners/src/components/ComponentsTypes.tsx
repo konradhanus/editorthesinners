@@ -1,3 +1,6 @@
 export type DrowerElementProps = {
-    name: string;
+    boardElement: {
+        path: string,
+        name: string
+    }
 };

@@ -1,23 +1,25 @@
 import styled from "styled-components";
-import assets from "../../assets";
+import { boardElements } from "../../assets";
 import DrawerElement from "./DrawerElement";
+import { DrowerElementProps } from "../ComponentsTypes";
+import { element } from "prop-types";
 
 const DrawerStyle = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 16px;
-    border-width: 10px;
-    width: 30%;
-    background-color: green;
-    height: 1000px;
+    flex-grow: 2;
+`;
+
+const ElementListWrapper = styled.ul`
+    color: red;
 `;
 
 const Drawer = () => (
-    <div>
-        {assets.map((singleAsset: string) => (
-            <DrawerElement name={singleAsset}/>
-        ))}
-    </div>
+    <DrawerStyle className="Drawer">
+        <ElementListWrapper>
+            {boardElements.map((singleBoardelement) => (
+                <DrawerElement boardElement={singleBoardelement}/>
+            ))}
+        </ElementListWrapper>
+    </DrawerStyle>
 )
 
 export default Drawer

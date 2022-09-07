@@ -25,33 +25,43 @@ import enemy from "./enemy.png";
 import wizzard from "./tom.png";
 import water from "./water.png";
 import box from "./box.png";
+import hero from "./hero.png";
 
-export default [
-    dirt1,
-    dirt2,
-    dirt3,
-    dirt4,
-    dirt5,
-    dirt6,
-    dirt7,
-    dirt8,
-    dirt9,
-    dirt10,
-    dirt11,
-    dirt12,
-    dirt13,
-    dirt14,
-    dirt15,
-    dirt16,
-    dirt17,
-    dirt18,
-    layer1,
-    layer2,
-    layer3,
-    layer4,
-    wizzard,
-    enemy,
-    water,
-    box,
-    background,
+const backgroundElement = [
+    { path: background, name: 'background' },
 ];
+
+const layerElements = [
+    { path: layer1, name: 'layer1' },
+    { path: layer2, name: 'layer2' },
+    { path: layer3, name: 'layer3' },
+    { path: layer4, name: 'layer4' },
+];
+
+const boardElements = [
+    { path: dirt1, name: 'dirt1' },
+    { path: dirt2, name: 'dirt2' },
+    { path: dirt3, name: 'dirt3' },
+    { path: dirt4, name: 'dirt4' },
+    { path: dirt5, name: 'dirt5' },
+    { path: dirt6, name: 'dirt6' },
+    { path: dirt7, name: 'dirt7' },
+    { path: dirt8, name: 'dirt8' },
+    { path: dirt9, name: 'dirt9' },
+    { path: dirt10, name: 'dirt10' },
+    { path: dirt11, name: 'dirt11' },
+    { path: dirt12, name: 'dirt12' },
+    { path: dirt13, name: 'dirt13' },
+    { path: dirt14, name: 'dirt14' },
+    { path: dirt15, name: 'dirt15' },
+    { path: dirt16, name: 'dirt16' },
+    { path: dirt17, name: 'water1' },
+    { path: dirt18, name: 'water2' },
+    { path: water, name: 'water3' },
+    { path: wizzard, name: 'wizzard' },
+    { path: enemy, name: 'enemy' },
+    { path: hero, name: 'hero' },
+    { path: box, name: 'box' }
+];
+
+export { backgroundElement, layerElements, boardElements}

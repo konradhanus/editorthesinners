@@ -2,17 +2,18 @@ import { FC } from "react";
 import { DrowerElementProps } from "../ComponentsTypes";
 import styled from "styled-components";
 
-const DrowerElementStyle = styled.div`
-    border-width: 10px;
-    height: 129px;
-    width: 129px;
-    margin: 5px;
+const DrowerElementStyle = styled.ul`
+    display: inline-block;
 `;
 
-const DrawerElement: FC<DrowerElementProps> = ({ name }) => (
-    <DrowerElementStyle>
-        <img src={name} alt="dirt1" />
+const ImageStyle = styled.img`
+    width: 128px
+`;
+
+const DrawerElement: FC<DrowerElementProps> = ({ boardElement }) => (
+    <DrowerElementStyle className="DrawerElement">
+        <ImageStyle src={boardElement.path} alt={boardElement.name} />
     </DrowerElementStyle>
 );
 
-export default DrawerElement;
+export default DrawerElement; 

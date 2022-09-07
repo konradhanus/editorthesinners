@@ -1,15 +1,13 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const EditorStyle = styled.div`
-    width: 100%;
-    height: 100%
-`
+    flex-grow: 8;
+`;
 
 const Editor = () => (
-    <EditorStyle>
+    <EditorStyle className='Editor'>
         Editor
     </EditorStyle>
-)
+);
 
 export default Editor;
-

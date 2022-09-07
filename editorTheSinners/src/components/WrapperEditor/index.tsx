@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import Drawer from "../Drawer";
+import { FC } from 'react';
+import Editor from "../Editor";
 
 const WrapperEditorStyle = styled.div`
     display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
+    align-items: stretch;
 `;
 
 const WrapperEditor = () => (
-    <WrapperEditorStyle>
+    <WrapperEditorStyle className="WrapperEditor">
         <Drawer />
+        <Editor />
     </WrapperEditorStyle>
 )
 
