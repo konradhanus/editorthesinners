@@ -1,18 +1,11 @@
 import styled from "styled-components";
-import Drawer from "../Drawer";
-import { FC } from 'react';
-import Editor from "../Editor";
+import WrapperEditor from "./WrapperEditor";
+import { ComponentType } from 'react';
 
-const WrapperEditorStyle = styled.div`
+
+const WrapperEditorStyle: ComponentType = styled(WrapperEditor)`
     display: flex;
     align-items: stretch;
 `;
 
-const WrapperEditor = () => (
-    <WrapperEditorStyle className="WrapperEditor">
-        <Drawer />
-        <Editor />
-    </WrapperEditorStyle>
-)
-
-export default WrapperEditor
+export default WrapperEditorStyle;

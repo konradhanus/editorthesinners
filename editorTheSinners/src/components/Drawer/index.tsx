@@ -1,25 +1,11 @@
 import styled from "styled-components";
-import { boardElements } from "../../assets";
-import DrawerElement from "./DrawerElement";
-import { DrowerElementProps } from "../ComponentsTypes";
-import { element } from "prop-types";
+import Drawer from './Drawer';
+import { ComponentType } from 'react';
 
-const DrawerStyle = styled.div`
-    flex-grow: 2;
+const DrawerStyle: ComponentType = styled(Drawer)`
+    position: relative;
+    background-color: green;
+    width: 25%
 `;
 
-const ElementListWrapper = styled.ul`
-    color: red;
-`;
-
-const Drawer = () => (
-    <DrawerStyle className="Drawer">
-        <ElementListWrapper>
-            {boardElements.map((singleBoardelement) => (
-                <DrawerElement boardElement={singleBoardelement}/>
-            ))}
-        </ElementListWrapper>
-    </DrawerStyle>
-)
-
-export default Drawer
+export default DrawerStyle;
