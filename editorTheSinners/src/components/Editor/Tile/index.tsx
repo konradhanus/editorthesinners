@@ -16,6 +16,7 @@ const TileStyle: ComponentType<Props> = styled(Tile)`
     height: 110px;
     background-color: transparent;
     border: 1px solid black;
+    background-size: cover
 `;
 
 export default TileStyle;

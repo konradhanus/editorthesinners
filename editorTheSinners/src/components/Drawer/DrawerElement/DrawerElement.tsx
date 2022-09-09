@@ -13,7 +13,9 @@ export interface DrawerElementProps {
         path: string,
         name: string,
     },
-};
+}; 
+
+type ElementType = Element|undefined|null;
 
 const DrawerElement: ComponentType<DrawerElementProps & Props> = ({ className, boardElement }): JSX.Element => {
     const value = useContext(EditorContext);
@@ -23,13 +25,23 @@ const DrawerElement: ComponentType<DrawerElementProps & Props> = ({ className, b
 
         const selectedElements = document.querySelectorAll("li[data-selected='true']");
 
-        selectedElements.forEach((element) => {
-            element.removeAttribute('style');
-            element.removeAttribute('data-selected');
-        })
+        selectedElements.forEach((element: ElementType) => {
+            const currnetSelectedElement: ElementType = ref.current?.firstElementChild;
 
-        ref.current?.setAttribute('style', 'border: 2px solid black');
-        ref.current?.setAttribute('data-selected', 'true');
+            if (element?.firstElementChild?.getAttribute('alt') !== currnetSelectedElement?.getAttribute('alt')){
+                element?.removeAttribute('style');
+                element?.removeAttribute('data-selected');
+            }
+        });
+
+        if (ref.current?.getAttribute('data-selected') === 'true') {
+            ref.current?.removeAttribute('style');
+            ref.current?.removeAttribute('data-selected');
+        }
+        else {
+            ref.current?.setAttribute('style', 'border: 2px solid black');
+            ref.current?.setAttribute('data-selected', 'true');
+        }
 
         value?.updateElement(name); 
     }
