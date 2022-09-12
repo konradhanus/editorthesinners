@@ -26,6 +26,7 @@ import wizzard from "./tom.png";
 import water from "./water.png";
 import box from "./box.png";
 import hero from "./hero.png";
+import { string } from "prop-types";
 
 const backgroundElement = [
     { path: background, name: 'background' },
@@ -38,7 +39,18 @@ const layerElements = [
     { path: layer4, name: 'layer4' },
 ];
 
-const boardElements = [
+export interface BoardElement {
+    path: string;
+    name: string;
+}
+
+export interface BoardElementExtened {
+    path: string;
+    name: string;
+    isSelected: boolean;
+}
+
+const boardElements: BoardElement[] = [
     { path: dirt1, name: 'dirt1' },
     { path: dirt2, name: 'dirt2' },
     { path: dirt3, name: 'dirt3' },
