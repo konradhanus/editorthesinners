@@ -1,23 +1,22 @@
-import { useState } from "react";
 import Drawer from "../Drawer";
 import Editor from "../Editor";
+import TopPanel from "../TopPanel";
 import ElementProvider from "../EditorContext";
-import React, { createContext, } from "react";
 
 export interface Props {
-    className: string
+    className: string;
 }
 
-const WrapperEditor = ({className}: Props) => {
+const WrapperEditor = ({ className }: Props) => {
     return (
-    <div data-qa="WrapperEditor" className={className}>
-        <ElementProvider>
-            <Drawer />
-            <Editor />
-        </ElementProvider>
-    </div>
-);
-}
+        <div data-qa="WrapperEditor" className={className}>
+            <ElementProvider>
+                <TopPanel />
+                <Drawer />
+                <Editor />
+            </ElementProvider>
+        </div>
+    );
+};
 
 export default WrapperEditor;
-    

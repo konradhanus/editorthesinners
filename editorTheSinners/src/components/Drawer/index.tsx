@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import Drawer from './Drawer';
-import { ComponentType } from 'react';
+import Drawer from "./Drawer";
+import { ComponentType } from "react";
 
 const DrawerStyle: ComponentType = styled(Drawer)`
-    position: relative;
+    grid-area: 2 / 1 / 6 / 2;
     background-color: green;
-    width: 25%
 `;
 
 export default DrawerStyle;

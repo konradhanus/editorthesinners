@@ -1,9 +1,10 @@
-import styled from 'styled-components';
-import Editor from './Editor';
-import { ComponentType } from 'react';
-import { backgroundElement } from '../../assets';
+import styled from "styled-components";
+import Editor from "./Editor";
+import { ComponentType } from "react";
+import { backgroundElement } from "../../assets";
 
-const EditorStyle: ComponentType  = styled(Editor)`
+const EditorStyle: ComponentType = styled(Editor)`
+    grid-area: 2 / 2 / 6 / 6;
     position: relative;
     width: 1430px;
     height: 770px;
@@ -14,4 +15,4 @@ const EditorStyle: ComponentType  = styled(Editor)`
     border: 1px solid black;
 `;
 
-export default EditorStyle
+export default EditorStyle;
