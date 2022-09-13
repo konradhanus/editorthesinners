@@ -28,7 +28,6 @@ const DrawerElement: ComponentType<DrawerElementProps & Props> =
         value?.updateElement(name); 
     }
 
-    console.log('isSelected', isSelected);
     return (
         <li data-qa="DrawerElement" className={className}>
             <ImageStyle 

@@ -1,9 +1,8 @@
 
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { boardElements, BoardElementExtened } from "../../assets";
 import DrawerElement from "../Drawer/DrawerElement";
 import ElementListWrapper from './ElementListWrapper';
-import { EditorContext } from './../EditorContext';
 export interface Props {
     className: string
 }
@@ -34,7 +33,6 @@ const Drawer = (props: Props) => {
         setBoxesStatus(newBoxesStatus);
     }
     
-    console.log('boxesStatus', boxesStatus);
     return(
         <div className={props.className}>
             <ElementListWrapper>

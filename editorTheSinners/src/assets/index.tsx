@@ -26,7 +26,6 @@ import wizzard from "./tom.png";
 import water from "./water.png";
 import box from "./box.png";
 import hero from "./hero.png";
-import { string } from "prop-types";
 
 const backgroundElement = [
     { path: background, name: 'background' },

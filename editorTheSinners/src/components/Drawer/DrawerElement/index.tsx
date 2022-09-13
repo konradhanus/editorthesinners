@@ -1,4 +1,4 @@
-import { ComponentType, FC } from "react";
+import { ComponentType } from "react";
 
 import styled from "styled-components";
 import DrawerElement, { DrawerElementProps } from "./DrawerElement";

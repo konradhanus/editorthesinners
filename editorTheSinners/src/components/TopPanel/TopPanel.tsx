@@ -1,5 +1,5 @@
-import Input from "../Form/Input";
 import { ComponentType } from "react";
+import ResizeBoardForm from "./ResizeBoardForm";
 
 interface TopPanelProps {
     className: string;
@@ -8,7 +8,7 @@ interface TopPanelProps {
 const TopPanel: ComponentType<TopPanelProps> = ({ className }) => {
     return (
         <div data-qa="TopPanel" className={className}>
-            <Input defaultValue="test_1" type="text" value="test" />
+            <ResizeBoardForm />
         </div>
     );
 };
