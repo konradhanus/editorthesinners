@@ -27,6 +27,7 @@ import water from "./water.png";
 import box from "./box.png";
 import hero from "./hero.png";
 import star from "./star.png";
+import {BLOCK} from "../levels/type";
 
 const backgroundElement = [
     { path: background, name: 'background' },
@@ -42,38 +43,41 @@ const layerElements = [
 export interface BoardElement {
     path: string;
     name: string;
+    valueId: number;
 }
 
 export interface BoardElementExtened {
     path: string;
     name: string;
+    valueId: number;
     isSelected: boolean;
 }
 
 const boardElements: BoardElement[] = [
-    { path: dirt1, name: 'dirt1' },
-    { path: dirt2, name: 'dirt2' },
-    { path: dirt3, name: 'dirt3' },
-    { path: dirt4, name: 'dirt4' },
-    { path: dirt5, name: 'dirt5' },
-    { path: dirt6, name: 'dirt6' },
-    { path: dirt7, name: 'dirt7' },
-    { path: dirt8, name: 'dirt8' },
-    { path: dirt9, name: 'dirt9' },
-    { path: dirt10, name: 'dirt10' },
-    { path: dirt11, name: 'dirt11' },
-    { path: dirt12, name: 'dirt12' },
-    { path: dirt13, name: 'dirt13' },
-    { path: dirt14, name: 'dirt14' },
-    { path: dirt15, name: 'dirt15' },
-    { path: dirt16, name: 'dirt16' },
-    { path: dirt17, name: 'water1' },
-    { path: dirt18, name: 'water2' },
-    { path: water, name: 'water3' },
-    { path: wizzard, name: 'wizzard' },
-    { path: enemy, name: 'enemy' },
-    { path: hero, name: 'hero' },
-    { path: box, name: 'box' }
+    { path: dirt1, name: 'dirt1', valueId: BLOCK.DIRT_LEFT },
+    { path: dirt2, name: 'dirt2', valueId: BLOCK.DIRT_MIDDLE},
+    { path: dirt3, name: 'dirt3', valueId: BLOCK.DIRT_RIGHT},
+    { path: dirt4, name: 'dirt4', valueId: BLOCK.DIRT4},
+    { path: dirt5, name: 'dirt5', valueId: BLOCK.DIRT5},
+    { path: dirt6, name: 'dirt6', valueId: BLOCK.DIRT6},
+    { path: dirt7, name: 'dirt7', valueId: BLOCK.DIRT7},
+    { path: dirt8, name: 'dirt8', valueId: BLOCK.DIRT8},
+    { path: dirt9, name: 'dirt9', valueId: BLOCK.DIRT9},
+    { path: dirt10, name: 'dirt10', valueId: BLOCK.DIRT10},
+    { path: dirt11, name: 'dirt11', valueId: BLOCK.DIRT11},
+    { path: dirt12, name: 'dirt12', valueId: BLOCK.DIRT12},
+    { path: dirt13, name: 'dirt13', valueId: BLOCK.DIRT13},
+    { path: dirt14, name: 'dirt14', valueId: BLOCK.DIRT14},
+    { path: dirt15, name: 'dirt15', valueId: BLOCK.DIRT15},
+    { path: dirt16, name: 'dirt16', valueId: BLOCK.DIRT16},
+    { path: dirt17, name: 'water1', valueId: BLOCK.WATER},
+    { path: dirt18, name: 'water2', valueId: BLOCK.WATER2},
+    { path: water, name: 'water3', valueId: BLOCK.WATER3},
+    { path: wizzard, name: 'wizzard', valueId: BLOCK.TOM},
+    { path: enemy, name: 'enemy', valueId: BLOCK.ENEMY},
+    { path: hero, name: 'hero', valueId: BLOCK.PLAYER},
+    { path: box, name: 'box', valueId: BLOCK.BOX},
+    { path: star, name: 'star', valueId: BLOCK.STAR},
 ];
 
 export { backgroundElement, layerElements, boardElements}

@@ -49,7 +49,7 @@ const Drawer = (props: Props) => {
                         key={`DrawerElement-${singleBoardelement.name}-${id}`} 
                         isSelected={singleBoardelement.isSelected}
                         setSelected={setSelected}
-                        />
+                    />
                 ))}
             </ElementListWrapper>
         </div>

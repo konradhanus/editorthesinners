@@ -7,32 +7,34 @@ interface ClassProp {
     className: string
 }
 
-const getAssetByName = (name: string|null|undefined) => {
-    const foundBoardElement = boardElements.find(boardElement=> boardElement.name ==  name);
-    return foundBoardElement?.path;
+type AssetName = string|null|undefined;
+
+const getAssetValueIdByName = (name: AssetName) => {
+    const foundBoardElement = boardElements.find(boardElement => boardElement.name == name);
+    return (foundBoardElement !== undefined) ? foundBoardElement.valueId : 0;
 }
 
-const Tile: ComponentType<Props & ClassProp> = ({className}) => {
+const Tile: ComponentType<Props & ClassProp> = ({className, x, y, value, updateTile}) => {
     const selectedElement = useContext(EditorContext);
-    const [isClicked, setIsClicked] = useState(false);
-    const currentTile = useRef<HTMLDivElement>(null);
-
-    
+   
     const handleClick = () => {
-        const url = getAssetByName(selectedElement?.element.selectedElement)?.toString();
+        const assetName = selectedElement?.element.selectedElement;
+        const valueId = getAssetValueIdByName(assetName);
+     
+        updateTile(x, y, valueId);
 
-        if (!isClicked) {
-            currentTile.current?.setAttribute('style', `background-image: url(${url}`);
-            setIsClicked(true);
-        }
-        else {
-            setIsClicked(false);
-            currentTile.current?.removeAttribute('style');
-        }
+        // if (!isClicked) {
+        //     currentTile.current?.setAttribute('style', `background-image: url(${url}`);
+        //     setIsClicked(true);
+        // }
+        // else {
+        //     setIsClicked(false);
+        //     currentTile.current?.removeAttribute('style');
+        // }
     }
 
     return (
-        <div className={className} ref={currentTile} onClick={() => handleClick()}></div>
+        <div className={className} onClick={() => handleClick()}></div>
     )
 }
 

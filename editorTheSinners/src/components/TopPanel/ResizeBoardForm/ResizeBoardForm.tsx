@@ -10,8 +10,8 @@ interface ResizeBoardFormProps {
 const ResizeBoardForm: ComponentType<ResizeBoardFormProps> = ({className}) => {
 
     const editorContext = useContext(EditorContext);
-    const [row, setRow] = useState<number>(0);
-    const [col, setCol] = useState<number>(0);
+    const [row, setRow] = useState<number>(7);
+    const [col, setCol] = useState<number>(13);
 
     const createBoardMatrix = (row: number, col: number) => {
         const height = Array(row).fill(0);
@@ -30,7 +30,7 @@ const ResizeBoardForm: ComponentType<ResizeBoardFormProps> = ({className}) => {
 
     return (
         <form className={className}>
-            <Input 
+            <Input
                 name="row" 
                 placeholder="row" 
                 type="number" 

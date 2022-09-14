@@ -18,7 +18,7 @@ interface Props {
     children: ReactNode
 }
 
-interface IBoardMatrix {
+export interface IBoardMatrix {
     matrix: number[][]
 }
 
@@ -26,8 +26,11 @@ export const EditorContext = createContext<ElementContextType & boardMatrixType 
 
 const ElementProvider = ({children}: Props) => {
 
+    const height = Array(7).fill(0);
+    const matrix = Array(13).fill(height);
+
     const [element, setElement] = useState<IEditorElement>({selectedElement: null});
-    const [boardMatrix, setBoardMatrix] = useState<IBoardMatrix>({matrix: [[]]});
+    const [boardMatrix, setBoardMatrix] = useState<IBoardMatrix>({matrix: matrix});
     
     const updateElement = (name: string) => {
         setElement({selectedElement: name});
