@@ -26,6 +26,7 @@ import wizzard from "./tom.png";
 import water from "./water.png";
 import box from "./box.png";
 import hero from "./hero.png";
+import star from "./star.png";
 
 const backgroundElement = [
     { path: background, name: 'background' },

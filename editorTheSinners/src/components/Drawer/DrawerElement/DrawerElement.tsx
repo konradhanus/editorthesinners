@@ -13,7 +13,7 @@ export interface DrawerElementProps {
         name: string,
     },
     isSelected: boolean;
-    setSelected: (id: number)=>void;
+    setSelected: (id: number) => void;
     id: number;
 }; 
 

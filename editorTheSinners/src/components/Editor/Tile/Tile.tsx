@@ -22,7 +22,6 @@ const Tile: ComponentType<Props & ClassProp> = ({className}) => {
         const url = getAssetByName(selectedElement?.element.selectedElement)?.toString();
 
         if (!isClicked) {
-            console.log(url);
             currentTile.current?.setAttribute('style', `background-image: url(${url}`);
             setIsClicked(true);
         }

@@ -22,28 +22,12 @@ interface IBoardMatrix {
     matrix: number[][]
 }
 
-const matrixData = [
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-    [0,1,2,3,4,5,6],
-];
-
 export const EditorContext = createContext<ElementContextType & boardMatrixType | null>(null);
 
 const ElementProvider = ({children}: Props) => {
 
     const [element, setElement] = useState<IEditorElement>({selectedElement: null});
-    const [boardMatrix, setBoardMatrix] = useState<IBoardMatrix>({matrix: matrixData});
+    const [boardMatrix, setBoardMatrix] = useState<IBoardMatrix>({matrix: [[]]});
     
     const updateElement = (name: string) => {
         setElement({selectedElement: name});

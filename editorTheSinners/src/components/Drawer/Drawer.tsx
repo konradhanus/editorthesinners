@@ -14,22 +14,28 @@ const Drawer = (props: Props) => {
     // component did mount
     useEffect(()=>{
         const boardElementExtended: BoardElementExtened[] = 
-            boardElements.map((singleBoardelement, id) => ({
-                ...singleBoardelement,
-                isSelected: false
-            }));
+            boardElements.map((singleBoardelement, id) => {
+
+                return{
+                    ...singleBoardelement,
+                    isSelected: false
+            };
+        });
 
         setBoxesStatus(boardElementExtended)
     },[]);
 
+
     const setSelected = (id: number) => {
 
-        const newBoxesStatus: BoardElementExtened[] = boxesStatus.map((element, id) => ({
-            ...element,
-            isSelected: false
-        }));;
+        const newBoxesStatus: BoardElementExtened[] = boxesStatus.map((element, index) => {
 
-        newBoxesStatus[id].isSelected = !newBoxesStatus[id].isSelected
+            const isSelected = (id === index) ? element.isSelected : false;
+
+            return {...element, isSelected: isSelected};
+        });
+
+        newBoxesStatus[id].isSelected = !newBoxesStatus[id].isSelected;
         setBoxesStatus(newBoxesStatus);
     }
     
