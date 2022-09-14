@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Tile from './Tile';
-import { EditorContext, IBoardMatrix } from '../EditorContext'
+import { EditorContext } from '../EditorContext'
 
 interface Props {
     className: string;

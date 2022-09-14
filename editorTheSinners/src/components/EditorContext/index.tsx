@@ -1,12 +1,12 @@
-import React, { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 interface IEditorElement {
-    selectedElement: string|null,
+    selectedElement: number|null,
 }
 
 type ElementContextType = {
     element: IEditorElement;
-    updateElement: (name: string) => void;
+    updateElement: (valueId: number) => void;
 }
 
 type boardMatrixType = {
@@ -32,8 +32,8 @@ const ElementProvider = ({children}: Props) => {
     const [element, setElement] = useState<IEditorElement>({selectedElement: null});
     const [boardMatrix, setBoardMatrix] = useState<IBoardMatrix>({matrix: matrix});
     
-    const updateElement = (name: string) => {
-        setElement({selectedElement: name});
+    const updateElement = (valueId: number) => {
+        setElement({selectedElement: valueId});
     }
 
     const updateBoardMatrix = (matrix: IBoardMatrix) => {

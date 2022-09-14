@@ -11,6 +11,7 @@ export interface DrawerElementProps {
     boardElement: {
         path: string,
         name: string,
+        valueId: number,
     },
     isSelected: boolean;
     setSelected: (id: number) => void;
@@ -23,9 +24,13 @@ const DrawerElement: ComponentType<DrawerElementProps & Props> =
 
     const value = useContext(EditorContext);
 
-    const handleClick = (name: string) => {
+    const handleClick = (valueId: number) => {
         setSelected(id);
-        value?.updateElement(name); 
+        if (valueId === value?.element.selectedElement) {
+            value?.updateElement(0); 
+        } else {
+            value?.updateElement(valueId); 
+        }
     }
 
     return (
@@ -35,7 +40,7 @@ const DrawerElement: ComponentType<DrawerElementProps & Props> =
                 alt={boardElement.name} 
                 id={boardElement.name} 
                 selected={isSelected}
-                onClick={() => handleClick(boardElement.name)} />
+                onClick={() => handleClick(boardElement.valueId)} />
         </li>
     );
     

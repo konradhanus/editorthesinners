@@ -1,6 +1,6 @@
 import { ComponentType } from 'react';
 import styled from 'styled-components';
-import Tile from './Tile';
+import Tile, { translateValueIdToImage } from './Tile';
 
 export interface Props {
     x: number;
@@ -18,8 +18,8 @@ const TileStyle: ComponentType<Props> = styled(Tile)`
     height: 110px;
     background-color: transparent;
     border: 1px solid black;
-    background-image: url(image);
-    background-size: cover
+    background-image: url(${props => translateValueIdToImage(props.value)});
+    background-size: cover;
 `;
 
 export default TileStyle;

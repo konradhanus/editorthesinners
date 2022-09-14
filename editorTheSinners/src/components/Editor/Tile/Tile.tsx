@@ -1,36 +1,33 @@
-import { ComponentType, useContext, useRef, useState } from "react";
+import { ComponentType, useContext, useState } from "react";
 import { Props } from ".";
 import { EditorContext } from "../../EditorContext";
-import { boardElements} from "../../../assets";
+import { boardElements} from "../../../assets"; 
 
 interface ClassProp {
     className: string
 }
+export const translateValueIdToImage = (valueId: number) => {
+    const singleElement = boardElements.find(boardElement => boardElement.valueId === valueId);
 
-type AssetName = string|null|undefined;
-
-const getAssetValueIdByName = (name: AssetName) => {
-    const foundBoardElement = boardElements.find(boardElement => boardElement.name == name);
-    return (foundBoardElement !== undefined) ? foundBoardElement.valueId : 0;
+    return singleElement?.path;
 }
 
-const Tile: ComponentType<Props & ClassProp> = ({className, x, y, value, updateTile}) => {
+const Tile: ComponentType<Props & ClassProp> = ({className, x, y, updateTile}) => {
     const selectedElement = useContext(EditorContext);
+    const [isClicked, setIsClicked] = useState(false);
    
     const handleClick = () => {
-        const assetName = selectedElement?.element.selectedElement;
-        const valueId = getAssetValueIdByName(assetName);
-     
-        updateTile(x, y, valueId);
-
-        // if (!isClicked) {
-        //     currentTile.current?.setAttribute('style', `background-image: url(${url}`);
-        //     setIsClicked(true);
-        // }
-        // else {
-        //     setIsClicked(false);
-        //     currentTile.current?.removeAttribute('style');
-        // }
+        const valueId = (selectedElement?.element.selectedElement) ? selectedElement?.element.selectedElement : 0;
+        console.log(valueId);
+        
+        if (!isClicked) {
+            updateTile(x, y, valueId);
+            setIsClicked(true);
+        }
+        else {
+            updateTile(x, y, 0);
+            setIsClicked(false);
+        }
     }
 
     return (

@@ -23,7 +23,6 @@ export const BLOCK = {
     DIRT15: 21,
     DIRT16: 22,
     WATER2: 23,
-    WATER2: 24,
-    WATER3: 25
+    WATER3: 24,
   };
   
