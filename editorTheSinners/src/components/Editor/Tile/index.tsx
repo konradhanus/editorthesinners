@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import Tile from './Tile';
 
 export interface Props {
-    x: number,
-    y: number,
+    x: number;
+    y: number;
+    value: number;
+    updateTile: (x: number, y: number, value: number) => void;
 }
 
 const TileStyle: ComponentType<Props> = styled(Tile)`
@@ -16,6 +18,7 @@ const TileStyle: ComponentType<Props> = styled(Tile)`
     height: 110px;
     background-color: transparent;
     border: 1px solid black;
+    background-image: url(image);
     background-size: cover
 `;
 
