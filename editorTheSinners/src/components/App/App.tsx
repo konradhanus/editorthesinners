@@ -1,3 +1,4 @@
+import { Counter } from '../../containers/Counter';
 import WrapperEditor from '../WrapperEditor';
 
 interface Props {
@@ -7,6 +8,7 @@ interface Props {
 const App = ({className}: Props) => (
     <div data-qa= "App" className={className}>
         <WrapperEditor />
+        <Counter />
     </div>
 );
 
