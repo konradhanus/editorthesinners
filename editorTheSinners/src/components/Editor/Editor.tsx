@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext } from 'react';
 import Tile from './Tile';
 import { EditorContext } from '../EditorContext'

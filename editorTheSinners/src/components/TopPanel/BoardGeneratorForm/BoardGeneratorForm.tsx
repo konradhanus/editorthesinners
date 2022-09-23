@@ -1,3 +1,4 @@
+import React from 'react';
 import { ComponentType, useState, MouseEvent, useContext } from "react";
 import { EditorContext } from "../../EditorContext";
 import Textarea  from "../../Form/Textarea";

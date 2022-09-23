@@ -1,3 +1,4 @@
+import React from 'react';
 import Drawer from "../Drawer";
 import Editor from "../Editor";
 import TopPanel from "../TopPanel";

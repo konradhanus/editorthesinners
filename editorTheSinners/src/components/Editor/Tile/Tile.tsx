@@ -1,3 +1,4 @@
+import React from 'react';
 import { ComponentType, useContext, useState } from "react";
 import { Props } from ".";
 import { EditorContext } from "../../EditorContext";

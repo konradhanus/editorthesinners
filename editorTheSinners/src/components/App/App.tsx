@@ -1,3 +1,4 @@
+import React from 'react';
 import { Counter } from '../../containers/Counter';
 import WrapperEditor from '../WrapperEditor';
 

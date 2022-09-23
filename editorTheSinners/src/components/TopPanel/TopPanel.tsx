@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { ComponentType } from "react";
 import BoardGeneratorForm from "./BoardGeneratorForm";
 import ResizeBoardForm from "./ResizeBoardForm";

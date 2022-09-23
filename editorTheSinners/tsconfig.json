@@ -1,26 +1,69 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+      "baseUrl": ".",
+      "outDir": "dist/types",
+      "module": "esnext",
+      "target": "es5",
+      "lib": ["es6", "dom", "esnext.asynciterable", "es2016.array.include"],
+      "sourceMap": true,
+      "declaration": true,
+      "jsx": "react",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "rootDir": "src",
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noImplicitAny": true,
+      "importHelpers": true,
+      "resolveJsonModule": true,
+      "strictNullChecks": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "noUnusedLocals": false,
+      "types": ["jest", "node"]
   },
-  "include": [
-    "src"
+  "exclude": [
+      "node_modules",
+      "dist",
+      "scripts",
+      "acceptance-tests",
+      "webpack",
+      "jest",
+      "platforms",
+      "www",
+      "dist",
+      "bin/setupTests.ts",
+      "plugins",
+      "**/__mocks__/*",
+      "enzymeSetup.ts",
+      "jest.config.js",
+      "config"
   ]
 }
+
+// {
+//   "compilerOptions": {
+//     "target": "es5",
+//     "lib": [
+//       "dom",
+//       "dom.iterable",
+//       "esnext"
+//     ],
+//     "allowJs": true,
+//     "skipLibCheck": true,
+//     "esModuleInterop": true,
+//     "allowSyntheticDefaultImports": true,
+//     "strict": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "noFallthroughCasesInSwitch": true,
+//     "module": "esnext",
+//     "moduleResolution": "node",
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "noEmit": true,
+//     "jsx": "react-jsx"
+//   },
+//   "include": [
+//     "src",
+//     "enzymeSetup.ts"  ]
+// }

@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { useState, useEffect } from "react";
 import { boardElements, BoardElementExtened } from "../../assets";
 import DrawerElement from "../Drawer/DrawerElement";

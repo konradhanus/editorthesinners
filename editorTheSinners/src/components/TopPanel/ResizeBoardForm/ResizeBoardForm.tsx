@@ -1,3 +1,4 @@
+import React from 'react';
 import { ComponentType, MouseEvent, useContext, useState } from "react";
 import { EditorContext } from "../../EditorContext";
 import Input from "../../Form/Input";
