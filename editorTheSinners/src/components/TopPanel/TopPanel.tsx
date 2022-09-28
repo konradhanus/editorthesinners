@@ -6,7 +6,7 @@ interface TopPanelProps {
     className: string;
 }
 
-const TopPanel: ComponentType<TopPanelProps> = ({className}) => {
+const TopPanel: ComponentType<TopPanelProps> = ({ className }) => {
     return (
         <div data-qa="TopPanel" className={className}>
             <ResizeBoardForm />

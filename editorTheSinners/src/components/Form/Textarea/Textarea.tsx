@@ -1,6 +1,4 @@
-import { ComponentType } from "react";
-
-interface TextareaProps {
+export interface TextareaProps {
     name: string;
     rows: number;
     cols: number;
@@ -9,9 +7,7 @@ interface TextareaProps {
 }
 
 const Textarea = (textareaProps: TextareaProps) => {
-    return (
-        <textarea {...textareaProps} />
-    )
-}
+    return <textarea {...textareaProps} />;
+};
 
 export default Textarea;

@@ -1,12 +1,12 @@
-import { Counter } from '../../containers/Counter';
-import WrapperEditor from '../WrapperEditor';
+import { Counter } from "../../containers/Counter";
+import WrapperEditor from "../WrapperEditor";
 
 interface Props {
-    className: string
+    className: string;
 }
 
-const App = ({className}: Props) => (
-    <div data-qa= "App" className={className}>
+const App = ({ className }: Props) => (
+    <div data-qa="App" className={className}>
         <WrapperEditor />
         <Counter />
     </div>

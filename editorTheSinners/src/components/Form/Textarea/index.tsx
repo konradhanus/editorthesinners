@@ -6,5 +6,4 @@ const TextareaStyle = styled(Textarea)`
     margin: 0.5em;
 `;
 
-
 export default TextareaStyle;

@@ -1,18 +1,27 @@
-import { shallow, render } from "enzyme";
-// import sinon from 'sinon';\
+import { shallow } from "enzyme";
 
-import WrapperEditor from "..";
+import TopPanel from "../TopPanel";
+import ResizeBoardForm from "../ResizeBoardForm";
+import BoardGeneratorForm from "../BoardGeneratorForm";
 
-it("should render", () => {
-    const wrapper = shallow(<WrapperEditor />);
-    expect(wrapper.exists()).toEqual(true);
+describe("TopPanel Component", () => {
+    const wrapper = shallow(<TopPanel className={"TopPanelClassName"} />);
+    it("should render", () => {
+        expect(wrapper.exists()).toEqual(true);
+    });
+
+    it("className is added to component", () => {
+        const className = "TopPanelClassName";
+
+        expect(wrapper.prop("className")).toBe(className);
+    });
+
+    it("renders Childs components", () => {
+        expect(wrapper.containsMatchingElement(<ResizeBoardForm />)).toEqual(
+            true
+        );
+        expect(wrapper.containsMatchingElement(<BoardGeneratorForm />)).toEqual(
+            true
+        );
+    });
 });
-/* it("className is added to component", () => {
-    const wrapper = shallow(<WrapperEditor />);
-    const props = wrapper.props();
-    console.log(props);
-    const className = "testClass";
-    const view = render(<WrapperEditor />, { className });
-
-    expect(view.find(`.${className}`)).toEqual(true);
-});*/
