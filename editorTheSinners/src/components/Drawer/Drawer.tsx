@@ -1,16 +1,18 @@
-import { useState, useEffect } from "react";
-import { boardElements, BoardElementExtened } from "../../assets";
-import DrawerElement from "../Drawer/DrawerElement";
-import ElementListWrapper from "./ElementListWrapper";
+import React from 'react';
+import { boardElements, BoardElementExtened } from '../../assets';
+import DrawerElement from '../Drawer/DrawerElement';
+import ElementListWrapper from './ElementListWrapper';
 export interface Props {
     className: string;
 }
 
 const Drawer = (props: Props) => {
-    const [boxesStatus, setBoxesStatus] = useState<BoardElementExtened[]>([]);
+    const [boxesStatus, setBoxesStatus] = React.useState<BoardElementExtened[]>(
+        []
+    );
 
     // component did mount
-    useEffect(() => {
+    React.useEffect(() => {
         const boardElementExtended: BoardElementExtened[] = boardElements.map(
             (singleBoardelement, id) => {
                 return {
@@ -37,7 +39,7 @@ const Drawer = (props: Props) => {
     };
 
     return (
-        <div data-qa="Drawer" className={props.className}>
+        <div data-qa='Drawer' className={props.className}>
             <ElementListWrapper>
                 {boxesStatus.map((singleBoardelement, id) => (
                     <DrawerElement
